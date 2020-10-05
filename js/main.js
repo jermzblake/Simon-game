@@ -69,14 +69,20 @@ let rightSwitch = document.getElementById("right-switch");
 let bottomSwitch = document.getElementById("bottom-switch");
 let leftSwitch = document.getElementById("left-switch");
 
+//game containers
+let topContainer = document.getElementById("top-switch-container");
+let rightContainer = document.getElementById("right-switch-container");
+let bottomContainer = document.getElementById("bottom-switch-container");
+let leftContainer = document.getElementById("left-switch-container");
+
 
 
 /*----- event listeners -----*/
 
-topSwitch.addEventListener('click', pressSwitch);
-rightSwitch.addEventListener('click', pressSwitch);
-bottomSwitch.addEventListener('click', pressSwitch);
-leftSwitch.addEventListener('click', pressSwitch);
+topContainer.addEventListener('click', showTopSwitch);
+rightContainer.addEventListener('click', showRightSwitch);
+bottomContainer.addEventListener('click', showBottomSwitch);
+leftContainer.addEventListener('click', showLeftSwitch);
 playSwitch.addEventListener('click', pressPlay);
 
 
@@ -87,9 +93,23 @@ function pressPlay(){
     playSwitch.classList.add('hidden');
 }
 
-function pressSwitch(){
-    topSwitch.classList.add();
+function showTopSwitch(){
+    topSwitch.classList.remove('hidden');
 }
+
+function showRightSwitch(){
+    rightSwitch.classList.remove('hidden');
+}
+
+function showBottomSwitch(){
+    bottomSwitch.classList.remove('hidden');
+}
+
+function showLeftSwitch(){
+    leftSwitch.classList.remove('hidden');
+}
+
+
 
 function choiceSelect(evt) {
     if(evt.target.id === "main-container") return
