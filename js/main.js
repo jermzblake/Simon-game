@@ -73,18 +73,22 @@ let leftSwitch = document.getElementById("left-switch");
 
 /*----- event listeners -----*/
 
-topSwitch.addEventListener('click' pressSwitch);
-rightSwitch.addEventListener('click' pressSwitch);
-bottomSwitch.addEventListener('click' pressSwitch);
-leftSwitch.addEventListener('click' pressSwitch);
-playSwitch.addEventListener('click' pressPlay);
+topSwitch.addEventListener('click', pressSwitch);
+rightSwitch.addEventListener('click', pressSwitch);
+bottomSwitch.addEventListener('click', pressSwitch);
+leftSwitch.addEventListener('click', pressSwitch);
+playSwitch.addEventListener('click', pressPlay);
 
 
 /*----- functions -----*/
 
-function playGame(){
+function pressPlay(){
     //hide play
-    playButton.classList.add('hidden');
+    playSwitch.classList.add('hidden');
+}
+
+function pressSwitch(){
+    topSwitch.classList.add();
 }
 
 function choiceSelect(evt) {
