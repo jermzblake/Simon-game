@@ -143,7 +143,14 @@ function clearBoard() {
 //display computer's choice(s)
 function showCompChoice() {
     compColorArray.forEach(function (el){
-        setTimeout(el.classList.remove('hidden'), 1000);
+        function flashSwitch() {
+            el.classList.remove('hidden');
+            setTimeout(hideSwitch, 500);
+            function hideSwitch(){
+                el.classList.add('hidden');
+            }
+        }
+        flashSwitch()
     })
 }
 
