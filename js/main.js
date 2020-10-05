@@ -33,14 +33,19 @@
     -this would require a setting toggle between the two game modes
 */
 
-
+//cached game switches
+let topSwitch = document.getElementById("top-switch");
+let rightSwitch = document.getElementById("right-switch");
+let bottomSwitch = document.getElementById("bottom-switch");
+let leftSwitch = document.getElementById("left-switch");
 
 /*----- constants -----*/
 let gameBoard = {
     top: 0,
     right: 1,
     bottom: 2,
-    left: 3, 
+    left: 3,
+    choices: [topSwitch, rightSwitch, bottomSwitch, leftSwitch] 
 }
 
 
@@ -63,11 +68,7 @@ let playerScore = document.getElementById("current-score-box")
 //play swtiches
 let playSwitch = document.getElementById("middle-switch");
 
-//game switches
-let topSwitch = document.getElementById("top-switch");
-let rightSwitch = document.getElementById("right-switch");
-let bottomSwitch = document.getElementById("bottom-switch");
-let leftSwitch = document.getElementById("left-switch");
+
 
 //game containers
 let topContainer = document.getElementById("top-switch-container");
@@ -118,6 +119,12 @@ function choiceSelect(evt) {
     playerChoice = evt.target.id
 }
 
-function compSeq(){
-    
+function showCompChoice() {
+    compColorArray.forEach(function (el){
+        el.classList.remove('hidden');
+    })
+}
+
+function compSequence(){
+    compColorArray.push(gameBoard.choices[(Math.floor(Math.random()*4))]);
 }
