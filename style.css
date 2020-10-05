@@ -29,6 +29,7 @@
   #left-column {
     align-items: center;
     justify-content: center;
+    position: relative;
   }
 
   #middle-column{
@@ -80,6 +81,15 @@
 
   p {
     color: #BEB7DF;
+  }
+
+  #current-score-box {
+    position: absolute;
+    height: 13px;
+    width: 22px;
+    border: 1px solid silver;
+    left: 0;
+    bottom: 0;
   }
 
 
