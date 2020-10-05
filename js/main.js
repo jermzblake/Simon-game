@@ -80,10 +80,10 @@ let leftContainer = document.getElementById("left-switch-container");
 
 /*----- event listeners -----*/
 
-topContainer.addEventListener('click', showTopSwitch);
-rightContainer.addEventListener('click', showRightSwitch);
-bottomContainer.addEventListener('click', showBottomSwitch);
-leftContainer.addEventListener('click', showLeftSwitch);
+topContainer.addEventListener('click', flashTopSwitch);
+rightContainer.addEventListener('click', flashRightSwitch);
+bottomContainer.addEventListener('click', flashBottomSwitch);
+leftContainer.addEventListener('click', flashLeftSwitch);
 playSwitch.addEventListener('click', pressPlay);
 
 
@@ -96,20 +96,36 @@ function pressPlay(){
 
 
 //Show switches
-function showTopSwitch(){
+function flashTopSwitch(){
     topSwitch.classList.remove('hidden');
+    setTimeout(hideTS, 500);
+    function hideTS(){
+        topSwitch.classList.add('hidden');
+    }
 }
 
-function showRightSwitch(){
+function flashRightSwitch(){
     rightSwitch.classList.remove('hidden');
+    setTimeout(hideRS, 500);
+    function hideRS(){
+        rightSwitch.classList.add('hidden');
+    }
 }
 
-function showBottomSwitch(){
+function flashBottomSwitch(){
     bottomSwitch.classList.remove('hidden');
+    setTimeout(hideBS, 500);
+    function hideBS(){
+        bottomSwitch.classList.add('hidden');
+    }
 }
 
-function showLeftSwitch(){
+function flashLeftSwitch(){
     leftSwitch.classList.remove('hidden');
+    setTimeout(hideLS, 500);
+    function hideLS(){
+        leftSwitch.classList.add('hidden');
+    }
 }
 
 
@@ -119,12 +135,19 @@ function choiceSelect(evt) {
     playerChoice = evt.target.id
 }
 
+function clearBoard() {
+    compColorArray = [];
+    
+}
+
+//display computer's choice(s)
 function showCompChoice() {
     compColorArray.forEach(function (el){
-        el.classList.remove('hidden');
+        setTimeout(el.classList.remove('hidden'), 1000);
     })
 }
 
 function compSequence(){
     compColorArray.push(gameBoard.choices[(Math.floor(Math.random()*4))]);
+    showCompChoice();
 }
