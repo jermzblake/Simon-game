@@ -43,7 +43,7 @@
 
 /*----- app's state (variables) -----*/
 let sequence = {
-    computer: []
+    computer: [],
     player: []
 }
 
@@ -56,7 +56,7 @@ let compTurn;
 /*----- cached element references -----*/
 //score
 let playerScore = document.getElementById()
-let highScore = 
+// let highScore = ;
 
 //play button
 let playButton = document.getElementById()
