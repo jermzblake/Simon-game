@@ -93,6 +93,8 @@ function pressPlay(){
     playSwitch.classList.add('hidden');
 }
 
+
+//Show switches
 function showTopSwitch(){
     topSwitch.classList.remove('hidden');
 }
