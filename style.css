@@ -23,13 +23,13 @@
     flex-direction: column;
     height: 100%;
     width: 33.33%;
+    position: relative;
     flex: 1;
   }
 
   #left-column {
     align-items: center;
     justify-content: center;
-    position: relative;
   }
 
   #middle-column{
@@ -42,30 +42,55 @@
     justify-content: center;
   } 
 
-  .switch {
+  .border {
+    background-color: #011627;
     height: 100px;
     width: 100px;
     border-radius: 50%;
   }
 
+  .switch {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  #left-switch-container {
+    border: 5px solid green;
+  }
+
+  #top-switch-container {
+    border: 5px solid yellow;
+  }
+
+  #right-switch-container {
+    border: 5px solid blue;
+  }
+
+  #bottom-switch-container {
+    border: 5px solid red;
+  }
+
   #left-switch {
     background-color: #E71D36;
-    border: 5px solid green;
   }
 
   #top-switch {
     background-color: #52CC00;
-    border: 5px solid yellow;
   }
 
   #right-switch {
     background-color: #F9B339;
-    border: 5px solid blue;
   }
 
   #bottom-switch {
     background-color: #2EC4B6;
-    border: 5px solid red;
   }
 
   #middle-switch {
