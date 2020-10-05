@@ -36,21 +36,23 @@
 
 
 /*----- constants -----*/
-
-
-
+let gameBoard = {
+    top: 0,
+    right: 1,
+    bottom: 2,
+    left: 3, 
+}
 
 
 /*----- app's state (variables) -----*/
-let sequence = {
-    computer: [],
-    player: []
-}
+
+let compColorArray = [];
+let playerChoiceArray = [];
 
 let playerTurn;
 let compTurn;
 
-
+let score = 0
 
 
 /*----- cached element references -----*/
@@ -58,12 +60,14 @@ let compTurn;
 let playerScore = document.getElementById()
 // let highScore = ;
 
-//play button
-let playButton = document.getElementById()
+//play swtiches
+let playSwitch = document.getElementById("middle-switch");
 
-//images
-let topImage = document.getElementById()
-let rightImage = 
+//game switches
+let topSwitch = document.getElementById("top-switch");
+let rightSwitch = document.getElementById("right-switch");
+let bottomSwitch = document.getElementById("bottom-switch");
+let leftSwitch = document.getElementById("left-switch");
 
 
 
