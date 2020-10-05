@@ -73,8 +73,11 @@ let leftSwitch = document.getElementById("left-switch");
 
 /*----- event listeners -----*/
 
-
-
+topSwitch.addEventListener('click' pressSwitch);
+rightSwitch.addEventListener('click' pressSwitch);
+bottomSwitch.addEventListener('click' pressSwitch);
+leftSwitch.addEventListener('click' pressSwitch);
+playSwitch.addEventListener('click' pressPlay);
 
 
 /*----- functions -----*/
