@@ -92,6 +92,10 @@
     bottom: 0;
   }
 
+  #current-score-box {
+    font-size: 11px;
+  }
+
 
   /* .hidden {
     display: none;

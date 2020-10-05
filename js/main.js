@@ -57,7 +57,7 @@ let score = 0
 
 /*----- cached element references -----*/
 //score
-let playerScore = document.getElementById()
+let playerScore = document.getElementById("current-score-box")
 // let highScore = ;
 
 //play swtiches
