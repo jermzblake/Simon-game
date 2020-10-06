@@ -184,7 +184,7 @@ function compSequence(){
     //need a way to let user know it's there turn to try after the sequence is shown
 }
 
-function choiceSelect(evt) {
+function playerSelect(evt) {
     if(evt.target.id === "main-container") return
     playerChoice = evt.target.id
     //change container ID's to match switches
@@ -192,7 +192,12 @@ function choiceSelect(evt) {
     rightContainer = rightSwitch
     bottomContainer = bottomSwitch
     leftContainer = leftSwitch
-    playerChoiceArray.push(playerChoice)
+    playerChoiceArray.push(playerChoice);
+    checkChoice()
+}
+
+function checkChoice() {
+    
 }
 
 function gameStart() {
