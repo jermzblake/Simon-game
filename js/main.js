@@ -53,10 +53,11 @@ let gameBoard = {
 
 let compColorArray = [];
 let playerChoiceArray = [];
-
+let correct;
 let playerTurn;
 let compTurn;
-
+let win;
+let timer = 0
 let score = 0
 
 
@@ -142,7 +143,10 @@ function clearBoard() {
 
 //display computer's choice(s)
 function showCompChoice() {
+    currentTimer = timer
     compColorArray.forEach(function (el){
+        currentTimer += 1000;
+        setTimeout(flashSwitch, currentTimer);
         function flashSwitch() {
             el.classList.remove('hidden');
             setTimeout(hideSwitch, 500);
@@ -150,7 +154,6 @@ function showCompChoice() {
                 el.classList.add('hidden');
             }
         }
-        flashSwitch()
     })
 }
 
