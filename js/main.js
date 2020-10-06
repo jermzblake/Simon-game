@@ -11,6 +11,8 @@
     - number is randomly generated and pushed to the array -that array is put through a function that includes a loop that displays each number (circle), through the DOM at a time
     - rendered as one of the medium sized circles to the user - will display as a hollow circle that fills in. - four coloured circles with a border. the circles will be hidden and only the boarder will be visible to start.
 
+- prompt player to try (through the DOM)
+
 - user clicks on the circle(s)
 
     - user starts with an empty array
@@ -33,14 +35,19 @@
     -this would require a setting toggle between the two game modes
 */
 
-
+//cached game switches
+let topSwitch = document.getElementById("top-switch");
+let rightSwitch = document.getElementById("right-switch");
+let bottomSwitch = document.getElementById("bottom-switch");
+let leftSwitch = document.getElementById("left-switch");
 
 /*----- constants -----*/
 let gameBoard = {
     top: 0,
     right: 1,
     bottom: 2,
-    left: 3, 
+    left: 3,
+    choices: [topSwitch, rightSwitch, bottomSwitch, leftSwitch] 
 }
 
 
@@ -48,10 +55,11 @@ let gameBoard = {
 
 let compColorArray = [];
 let playerChoiceArray = [];
-
+let correct;
 let playerTurn;
 let compTurn;
-
+let win;
+let timer = 0
 let score = 0
 
 
@@ -63,20 +71,17 @@ let playerScore = document.getElementById("current-score-box")
 //play swtiches
 let playSwitch = document.getElementById("middle-switch");
 
-//game switches
-let topSwitch = document.getElementById("top-switch");
-let rightSwitch = document.getElementById("right-switch");
-let bottomSwitch = document.getElementById("bottom-switch");
-let leftSwitch = document.getElementById("left-switch");
-
+//game messages
+let messages = document.getElementById("message");
+let text = document.getElementById("text");
 
 
 /*----- event listeners -----*/
 
-topSwitch.addEventListener('click', pressSwitch);
-rightSwitch.addEventListener('click', pressSwitch);
-bottomSwitch.addEventListener('click', pressSwitch);
-leftSwitch.addEventListener('click', pressSwitch);
+topSwitch.addEventListener('click', flashTopSwitch);
+rightSwitch.addEventListener('click', flashRightSwitch);
+bottomSwitch.addEventListener('click', flashBottomSwitch);
+leftSwitch.addEventListener('click', flashLeftSwitch);
 playSwitch.addEventListener('click', pressPlay);
 
 
@@ -85,17 +90,121 @@ playSwitch.addEventListener('click', pressPlay);
 function pressPlay(){
     //hide play
     playSwitch.classList.add('hidden');
+    showWatchMessage()
+    //start game
+    gameStart()
 }
 
-function pressSwitch(){
-    topSwitch.classList.add();
+
+//Show switches
+function flashTopSwitch(){
+    topSwitch.classList.remove('hollow');
+    setTimeout(hideTS, 500);
+    function hideTS(){
+        topSwitch.classList.add('hollow');
+    }
 }
 
-function choiceSelect(evt) {
+function flashRightSwitch(){
+    rightSwitch.classList.remove('hollow');
+    setTimeout(hideRS, 500);
+    function hideRS(){
+        rightSwitch.classList.add('hollow');
+    }
+}
+
+function flashBottomSwitch(){
+    bottomSwitch.classList.remove('hollow');
+    setTimeout(hideBS, 500);
+    function hideBS(){
+        bottomSwitch.classList.add('hollow');
+    }
+}
+
+function flashLeftSwitch(){
+    leftSwitch.classList.remove('hollow');
+    setTimeout(hideLS, 500);
+    function hideLS(){
+        leftSwitch.classList.add('hollow');
+    }
+}
+//display initial watch message
+function showWatchMessage() {
+    if(playSwitch.classList.contains('hidden') == false) return;
+    messages.classList.remove('game-message');
+    setTimeout(flashMessage, 1000)
+    function flashMessage() {
+        messages.classList.add('game-message');
+    }
+}
+
+//display 'your turn'
+function showPlayerMessage() {
+    // if(playSwitch.classList.contains('hidden') == false) return;
+    text.textContent = "YOUR TURN";
+    messages.classList.remove('game-message');
+    setTimeout(flashMessage, 1000)
+    function flashMessage() {
+        messages.classList.add('game-message');
+    }
+}
+
+function clearBoard() {
+    compColorArray = [];
+    
+}
+
+//display computer's choice(s)
+function showCompChoice() {
+    currentTimer = timer
+    compColorArray.forEach(function (el){
+        currentTimer += 1000;
+        setTimeout(flashSwitch, currentTimer);
+        function flashSwitch() {
+            el.classList.remove('hollow');
+            setTimeout(hideSwitch, 500);
+            function hideSwitch(){
+                el.classList.add('hollow');
+            }
+        }
+    })
+}
+
+//make computer sequence
+function compSequence(){
+    compColorArray.push(gameBoard.choices[(Math.floor(Math.random()*4))]);
+    showCompChoice();
+    //need a way to let user know it's there turn to try after the sequence is shown
+}
+
+function playerSelect(evt) {
     if(evt.target.id === "main-container") return
     playerChoice = evt.target.id
+    playerChoiceArray.push(playerChoice);
+    checkChoice()
 }
 
-function compSeq(){
-    
+function checkChoice() {
+    if(compColorArray.length > playerChoiceArray.length){
+        for(let i = 0; i < compColorArray.length; i++){
+            for(let j = 0; j < playerChoiceArray.length; j++){
+                if(compColorArray[i] != playerChoiceArray[j]){
+                    console.log("wrong");
+                    gameStart()
+                }
+            }
+        }
+    }else return;
+    if (compColorArray == playerChoiceArray){
+        console.log("move on")
+    }else{
+        console.log("NOPE")
+    }
+}
+
+function gameStart() {
+    compColorArray = [];
+    playerChoiceArray = [];
+    score = 0;
+    compSequence();
 }
