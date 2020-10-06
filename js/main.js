@@ -138,6 +138,10 @@ function flashLeftSwitch(){
 function showMessage() {
     if(playSwitch.classList.contains('hidden') == false) return;
     messages.classList.remove('game-message');
+    setTimeout(flashMessage, 1000)
+    function flashMessage() {
+        messages.classList.add('game-message');
+    }
 }
 
 function clearBoard() {
