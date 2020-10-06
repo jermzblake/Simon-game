@@ -73,6 +73,7 @@ let playSwitch = document.getElementById("middle-switch");
 
 //game messages
 let messages = document.getElementById("message");
+let text = document.getElementById("text");
 
 //game containers
 let topContainer = document.getElementById("top-switch-container");
@@ -96,7 +97,7 @@ playSwitch.addEventListener('click', pressPlay);
 function pressPlay(){
     //hide play
     playSwitch.classList.add('hidden');
-    showMessage()
+    showWatchMessage()
     //start game
     gameStart()
 }
@@ -134,9 +135,20 @@ function flashLeftSwitch(){
         leftSwitch.classList.add('hidden');
     }
 }
-
-function showMessage() {
+//display initial watch message
+function showWatchMessage() {
     if(playSwitch.classList.contains('hidden') == false) return;
+    messages.classList.remove('game-message');
+    setTimeout(flashMessage, 1000)
+    function flashMessage() {
+        messages.classList.add('game-message');
+    }
+}
+
+//display 'your turn'
+function showPlayerMessage() {
+    // if(playSwitch.classList.contains('hidden') == false) return;
+    text.textContent = "YOUR TURN";
     messages.classList.remove('game-message');
     setTimeout(flashMessage, 1000)
     function flashMessage() {
