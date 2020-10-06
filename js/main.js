@@ -197,7 +197,21 @@ function playerSelect(evt) {
 }
 
 function checkChoice() {
-    
+    if(compColorArray.length > playerChoiceArray.length){
+        for(let i = 0; i < compColorArray.length; i++){
+            for(let j = 0; j < playerChoiceArray.length; j++){
+                if(compColorArray[i] != playerChoiceArray[j]){
+                    console.log("wrong");
+                    gameStart()
+                }
+            }
+        }
+    }else return;
+    if (compColorArray == playerChoiceArray){
+        console.log("move on")
+    }else{
+        console.log("NOPE")
+    }
 }
 
 function gameStart() {
