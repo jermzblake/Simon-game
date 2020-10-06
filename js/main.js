@@ -11,6 +11,8 @@
     - number is randomly generated and pushed to the array -that array is put through a function that includes a loop that displays each number (circle), through the DOM at a time
     - rendered as one of the medium sized circles to the user - will display as a hollow circle that fills in. - four coloured circles with a border. the circles will be hidden and only the boarder will be visible to start.
 
+- prompt player to try (through the DOM)
+
 - user clicks on the circle(s)
 
     - user starts with an empty array
@@ -93,6 +95,8 @@ playSwitch.addEventListener('click', pressPlay);
 function pressPlay(){
     //hide play
     playSwitch.classList.add('hidden');
+    //start game
+    gameStart()
 }
 
 
@@ -129,13 +133,6 @@ function flashLeftSwitch(){
     }
 }
 
-
-
-function choiceSelect(evt) {
-    if(evt.target.id === "main-container") return
-    playerChoice = evt.target.id
-}
-
 function clearBoard() {
     compColorArray = [];
     
@@ -157,7 +154,27 @@ function showCompChoice() {
     })
 }
 
+//make computer sequence
 function compSequence(){
     compColorArray.push(gameBoard.choices[(Math.floor(Math.random()*4))]);
     showCompChoice();
+    //need a way to let user know it's there turn to try after the sequence is shown
+}
+
+function choiceSelect(evt) {
+    if(evt.target.id === "main-container") return
+    playerChoice = evt.target.id
+    //change container ID's to match switches
+    topContainer = topSwitch
+    rightContainer = rightSwitch
+    bottomContainer = bottomSwitch
+    leftContainer = leftSwitch
+    playerChoiceArray.push(playerChoice)
+}
+
+function gameStart() {
+    compColorArray = [];
+    playerChoiceArray = [];
+    score = 0;
+    compSequence();
 }
