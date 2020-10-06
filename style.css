@@ -126,3 +126,16 @@
   .hidden {
     z-index: -1;
 }
+
+#message {
+  color: #CEBEBE;
+  position: relative;
+  height: 50px;
+  width:50px;
+  top: -20px;
+  right: 17px;
+}
+
+.game-message {
+  display: none;
+}

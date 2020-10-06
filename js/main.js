@@ -71,7 +71,8 @@ let playerScore = document.getElementById("current-score-box")
 //play swtiches
 let playSwitch = document.getElementById("middle-switch");
 
-
+//game messages
+let messages = document.getElementById("message");
 
 //game containers
 let topContainer = document.getElementById("top-switch-container");
@@ -95,6 +96,7 @@ playSwitch.addEventListener('click', pressPlay);
 function pressPlay(){
     //hide play
     playSwitch.classList.add('hidden');
+    showMessage()
     //start game
     gameStart()
 }
@@ -131,6 +133,11 @@ function flashLeftSwitch(){
     function hideLS(){
         leftSwitch.classList.add('hidden');
     }
+}
+
+function showMessage() {
+    if(playSwitch.classList.contains('hidden') == false) return;
+    messages.classList.remove('game-message');
 }
 
 function clearBoard() {
