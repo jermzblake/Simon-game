@@ -48,22 +48,22 @@
     border-radius: 50%;
   }
 
-  #left-switch {
+  .left-switch {
     background-color: #E71D36;
     border: 5px solid green;
   }
 
-  #top-switch {
+  .top-switch {
     background-color: #52CC00;
     border: 5px solid yellow;
   }
 
-  #right-switch {
+  .right-switch {
     background-color: #F9B339;
     border: 5px solid blue;
   }
 
-  #bottom-switch {
+  .bottom-switch {
     background-color: #2EC4B6;
     border: 5px solid red;
   }
@@ -100,4 +100,8 @@
 
   .hidden {
     z-index: -1;
+}
+
+.hollow {
+  background-color: inherit;
 }
