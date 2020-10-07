@@ -93,12 +93,13 @@ playSwitch.addEventListener('click', pressPlay);
 
 /*----- functions -----*/
 
-function init(){
+function reInit(){
     playSwitch.classList.remove('hidden');
     count = 0
     compChoices = []
     compColorArray = [];
     playerChoiceArray = [];
+    text.textContent = "WATCH"
 }
 
 
@@ -190,12 +191,14 @@ function showCompChoice() {
         }
     })
     // debugger;
-    showPlayerMessage()
+    //showPlayerMessage()
 
 }
 
+
 //make computer sequence
 function compSequence(){
+    text.textContent = "WATCH"
     playerChoiceArray = [];
     compColorArray = [];
     compChoices.push(Math.floor(Math.random()*4))
@@ -232,7 +235,7 @@ function playerSelect(evt) {
         setTimeout(compSequence, 800);
     }else{
         showLoserMessage()
-        setTimeout(init, 2000);
+        setTimeout(reInit, 2000);
         // console.log("na-uh")
     }
 }
