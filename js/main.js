@@ -105,9 +105,8 @@ function init(){
 function pressPlay(){
     //hide play
     playSwitch.classList.add('hidden');
-    showWatchMessage()
     //start game
-    gameStart()
+    setTimeout(gameStart, 400)
 }
 
 
@@ -193,10 +192,8 @@ function compSequence(){
     compChoices.forEach(function (num){
         compColorArray.push(gameBoard.choices[num]);
     })
-
-    console.log(compChoices)
-    console.log(compColorArray)
-    showCompChoice();
+    showWatchMessage();
+    setTimeout(showCompChoice, 500);
     //need a way to let user know it's their turn to try after the sequence is shown
 }
 
