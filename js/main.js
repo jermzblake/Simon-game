@@ -93,12 +93,21 @@ playSwitch.addEventListener('click', pressPlay);
 
 /*----- functions -----*/
 
+function reInit(){
+    playSwitch.classList.remove('hidden');
+    count = 0
+    compChoices = []
+    compColorArray = [];
+    playerChoiceArray = [];
+    text.textContent = "WATCH"
+}
+
+
 function pressPlay(){
     //hide play
     playSwitch.classList.add('hidden');
-    showWatchMessage()
     //start game
-    gameStart()
+    setTimeout(gameStart, 400)
 }
 
 
@@ -155,10 +164,17 @@ function showPlayerMessage() {
     }
 }
 
-function clearBoard() {
-    compColorArray = [];
-    
+//display Loser message
+function showLoserMessage() {
+    // if(playSwitch.classList.contains('hidden') == false) return;
+    text.textContent = "NUH-UH!";
+    messages.classList.remove('game-message');
+    setTimeout(flashMessage, 2000)
+    function flashMessage() {
+        messages.classList.add('game-message');
+    }
 }
+
 
 //display computer's choice(s)
 function showCompChoice() {
@@ -174,26 +190,30 @@ function showCompChoice() {
             }
         }
     })
+    // debugger;
+    //showPlayerMessage()
+
 }
+
 
 //make computer sequence
 function compSequence(){
+    text.textContent = "WATCH"
     playerChoiceArray = [];
     compColorArray = [];
     compChoices.push(Math.floor(Math.random()*4))
     compChoices.forEach(function (num){
         compColorArray.push(gameBoard.choices[num]);
     })
-
-    console.log(compChoices)
-    console.log(compColorArray)
-    showCompChoice();
+    showWatchMessage();
+    setTimeout(showCompChoice, 500);
     //need a way to let user know it's their turn to try after the sequence is shown
 }
 
 //player event handler
 function playerSelect(evt) {
     if(evt.target.id === "main-container") return;
+    if(!playSwitch.classList.contains("hidden")) return;
     if(evt.target.id === "top-switch"){
         playerChoice = 0;
     }if(evt.target.id === "right-switch"){
@@ -212,10 +232,11 @@ function playerSelect(evt) {
     }else if (areSame == true) {
         score++
         playerScore.innerHTML = score;
-        compSequence()
+        setTimeout(compSequence, 800);
     }else{
-        
-        console.log("na-uh")
+        showLoserMessage()
+        setTimeout(reInit, 2000);
+        // console.log("na-uh")
     }
 }
 
