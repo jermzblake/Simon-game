@@ -163,6 +163,17 @@ function showPlayerMessage() {
     }
 }
 
+//display Loser message
+function showLoserMessage() {
+    // if(playSwitch.classList.contains('hidden') == false) return;
+    text.textContent = "NUH-UH!";
+    messages.classList.remove('game-message');
+    setTimeout(flashMessage, 1000)
+    function flashMessage() {
+        messages.classList.add('game-message');
+    }
+}
+
 function clearBoard() {
     compColorArray = [];
     
@@ -182,6 +193,9 @@ function showCompChoice() {
             }
         }
     })
+    // debugger;
+    showPlayerMessage()
+
 }
 
 //make computer sequence
@@ -221,7 +235,7 @@ function playerSelect(evt) {
         playerScore.innerHTML = score;
         setTimeout(compSequence, 800);
     }else{
-        
+        showLoserMessage()
         console.log("na-uh")
     }
 }
