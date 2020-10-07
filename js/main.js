@@ -161,6 +161,7 @@ function showCompChoice() {
         currentTimer += 1000;
         setTimeout(flashSwitch, currentTimer);
         function flashSwitch() {
+            console.log(el)
             el.classList.remove('hollow');
             setTimeout(hideSwitch, 500);
             function hideSwitch(){
