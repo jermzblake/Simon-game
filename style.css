@@ -50,22 +50,22 @@ body {
 
 .left-switch {
   background-color: #E71D36;
-  border: 5px solid green;
+  border: 5px solid #E71D36;
 }
 
 .top-switch {
   background-color: #52CC00;
-  border: 5px solid yellow;
+  border: 5px solid #52CC00;
 }
 
 .right-switch {
   background-color: #F9B339;
-  border: 5px solid blue;
+  border: 5px solid #F9B339;
 }
 
 .bottom-switch {
   background-color: #2EC4B6;
-  border: 5px solid red;
+  border: 5px solid #2EC4B6;
 }
 
 #middle-switch {
