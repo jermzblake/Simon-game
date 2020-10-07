@@ -93,6 +93,15 @@ playSwitch.addEventListener('click', pressPlay);
 
 /*----- functions -----*/
 
+function init(){
+    playSwitch.classList.add('hidden');
+    count = 0
+    compChoices = []
+    compColorArray = [];
+    playerChoiceArray = [];
+}
+
+
 function pressPlay(){
     //hide play
     playSwitch.classList.add('hidden');
@@ -194,6 +203,7 @@ function compSequence(){
 //player event handler
 function playerSelect(evt) {
     if(evt.target.id === "main-container") return;
+    if(!playSwitch.classList.contains("hidden")) return;
     if(evt.target.id === "top-switch"){
         playerChoice = 0;
     }if(evt.target.id === "right-switch"){
@@ -212,7 +222,7 @@ function playerSelect(evt) {
     }else if (areSame == true) {
         score++
         playerScore.innerHTML = score;
-        compSequence()
+        setTimeout(compSequence, 800);
     }else{
         
         console.log("na-uh")
