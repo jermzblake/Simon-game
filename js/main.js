@@ -56,6 +56,7 @@ let gameBoard = {
 let compColorArray = [];
 let playerChoiceArray = [];
 let compChoices = [];
+let areSame = false;
 let playerChoice;
 let correct;
 let playerTurn;
@@ -177,7 +178,9 @@ function showCompChoice() {
 
 //make computer sequence
 function compSequence(){
-    compChoices.push([(Math.floor(Math.random()*4))])
+    playerChoiceArray = [];
+    compColorArray = [];
+    compChoices.push(Math.floor(Math.random()*4))
     compChoices.forEach(function (num){
         compColorArray.push(gameBoard.choices[num]);
     })
@@ -191,36 +194,37 @@ function compSequence(){
 //player event handler
 function playerSelect(evt) {
     if(evt.target.id === "main-container") return;
-    playerChoice = evt.target
-    // playerChoice.classList.remove('hollow');
-    // setTimeout(hideTS, 500);
-    // function hideTS(){
-    //     evt.target.id.classList.add('hollow');
-    // }
+    if(evt.target.id === "top-switch"){
+        playerChoice = 0;
+    }if(evt.target.id === "right-switch"){
+        playerChoice = 1;
+    }if(evt.target.id === "bottom-switch"){
+        playerChoice = 2;
+    }if(evt.target.id === "left-switch"){
+        playerChoice = 3;
+    }
+    // playerChoice = evt.target
     playerChoiceArray.push(playerChoice);
-    console.log(playerChoice);
-    checkChoice()
+    console.log(playerChoiceArray);
+    compareChoices();
+    if(areSame == true){
+        compSequence()
+    }else{
+        console.log("na-uh")
+    }
 }
 
 //comparing player input to computer sequence
-function checkChoice() {
-    if(compChoices.length > playerChoiceArray.length){
-        for(let i = 0; i < compColorArray.length; i++){
-            for(let j = 0; j < playerChoiceArray.length; j++){
-                if(compChoices[i] !== playerChoiceArray[j]){
-                    console.log("wrong");
-                    //need an init function here
-                }
-            }
+function compareChoices() {
+    for(let j = 0; j < playerChoiceArray.length; j++){
+        if(playerChoiceArray[j] === compChoices[j]){
+            areSame = true;
+        }else{
+            areSame = false;
+            break
         }
-    }else {
-        console.log("Yaya");
     }
-    if (compChoices == playerChoiceArray){
-        console.log("on to the next one")
-    }else{
-        console.log("NOPE")
-    }
+    return areSame
 }
 
 function gameStart() {
