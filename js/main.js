@@ -47,7 +47,7 @@ let gameBoard = {
     right: 1,
     bottom: 2,
     left: 3,
-    choices: [topSwitch, rightSwitch, bottomSwitch, leftSwitch] 
+    choices: [topSwitch, rightSwitch, bottomSwitch, leftSwitch], 
 }
 
 
@@ -55,6 +55,7 @@ let gameBoard = {
 
 let compColorArray = [];
 let playerChoiceArray = [];
+let playerChoice;
 let correct;
 let playerTurn;
 let compTurn;
@@ -77,11 +78,14 @@ let text = document.getElementById("text");
 
 
 /*----- event listeners -----*/
-
 topSwitch.addEventListener('click', flashTopSwitch);
+topSwitch.addEventListener('click', playerSelect);
 rightSwitch.addEventListener('click', flashRightSwitch);
+rightSwitch.addEventListener('click', playerSelect);
 bottomSwitch.addEventListener('click', flashBottomSwitch);
+bottomSwitch.addEventListener('click', playerSelect);
 leftSwitch.addEventListener('click', flashLeftSwitch);
+leftSwitch.addEventListener('click', playerSelect);
 playSwitch.addEventListener('click', pressPlay);
 
 
@@ -175,29 +179,39 @@ function showCompChoice() {
 function compSequence(){
     compColorArray.push(gameBoard.choices[(Math.floor(Math.random()*4))]);
     showCompChoice();
-    //need a way to let user know it's there turn to try after the sequence is shown
+    //need a way to let user know it's their turn to try after the sequence is shown
 }
 
+//player event handler
 function playerSelect(evt) {
-    if(evt.target.id === "main-container") return
-    playerChoice = evt.target.id
-    playerChoiceArray.push(playerChoice);
+    if(evt.target.id === "main-container") return;
+    playerChoice = evt.target
+    // playerChoice.classList.remove('hollow');
+    // setTimeout(hideTS, 500);
+    // function hideTS(){
+    //     evt.target.id.classList.add('hollow');
+    // }
+    playerChoiceArray.push(evt.target);
+    console.log(playerChoice);
     checkChoice()
 }
 
+//comparing player input to computer sequence
 function checkChoice() {
     if(compColorArray.length > playerChoiceArray.length){
         for(let i = 0; i < compColorArray.length; i++){
             for(let j = 0; j < playerChoiceArray.length; j++){
-                if(compColorArray[i] != playerChoiceArray[j]){
+                if(compColorArray[i] !== playerChoiceArray[j]){
                     console.log("wrong");
-                    gameStart()
+                    //need an init function here
                 }
             }
         }
-    }else return;
+    }else {
+        console.log("Yaya");
+    }
     if (compColorArray == playerChoiceArray){
-        console.log("move on")
+        console.log("on to the next one")
     }else{
         console.log("NOPE")
     }
