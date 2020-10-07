@@ -95,10 +95,11 @@ playSwitch.addEventListener('click', pressPlay);
 
 function reInit(){
     playSwitch.classList.remove('hidden');
-    count = 0
+    score = 0
     compChoices = []
     compColorArray = [];
     playerChoiceArray = [];
+    playerScore.innerHTML = score;
     text.textContent = "WATCH"
 }
 
@@ -153,23 +154,22 @@ function showWatchMessage() {
     }
 }
 
-//display 'your turn'
-function showPlayerMessage() {
-    // if(playSwitch.classList.contains('hidden') == false) return;
-    text.textContent = "YOUR TURN";
-    messages.classList.remove('game-message');
-    setTimeout(flashMessage, 1000)
-    function flashMessage() {
-        messages.classList.add('game-message');
-    }
-}
-
 //display Loser message
 function showLoserMessage() {
     // if(playSwitch.classList.contains('hidden') == false) return;
     text.textContent = "NUH-UH!";
     messages.classList.remove('game-message');
     setTimeout(flashMessage, 2000)
+    function flashMessage() {
+        messages.classList.add('game-message');
+    }
+}
+
+//display Successful attempt message
+function showSuccessMessage(){
+    text.textContent = "NICE!";
+    messages.classList.remove('game-message');
+    setTimeout(flashMessage, 1000)
     function flashMessage() {
         messages.classList.add('game-message');
     }
@@ -190,8 +190,6 @@ function showCompChoice() {
             }
         }
     })
-    // debugger;
-    //showPlayerMessage()
 
 }
 
@@ -232,7 +230,8 @@ function playerSelect(evt) {
     }else if (areSame == true) {
         score++
         playerScore.innerHTML = score;
-        setTimeout(compSequence, 800);
+        showSuccessMessage()
+        setTimeout(compSequence, 1100);
     }else{
         showLoserMessage()
         setTimeout(reInit, 2000);
