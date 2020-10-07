@@ -94,7 +94,7 @@ playSwitch.addEventListener('click', pressPlay);
 /*----- functions -----*/
 
 function init(){
-    playSwitch.classList.add('hidden');
+    playSwitch.classList.remove('hidden');
     count = 0
     compChoices = []
     compColorArray = [];
@@ -168,16 +168,12 @@ function showLoserMessage() {
     // if(playSwitch.classList.contains('hidden') == false) return;
     text.textContent = "NUH-UH!";
     messages.classList.remove('game-message');
-    setTimeout(flashMessage, 1000)
+    setTimeout(flashMessage, 2000)
     function flashMessage() {
         messages.classList.add('game-message');
     }
 }
 
-function clearBoard() {
-    compColorArray = [];
-    
-}
 
 //display computer's choice(s)
 function showCompChoice() {
@@ -236,7 +232,8 @@ function playerSelect(evt) {
         setTimeout(compSequence, 800);
     }else{
         showLoserMessage()
-        console.log("na-uh")
+        setTimeout(init, 2000);
+        // console.log("na-uh")
     }
 }
 
