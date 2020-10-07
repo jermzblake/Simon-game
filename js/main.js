@@ -154,17 +154,6 @@ function showWatchMessage() {
     }
 }
 
-//display 'your turn'
-function showPlayerMessage() {
-    // if(playSwitch.classList.contains('hidden') == false) return;
-    text.textContent = "YOUR TURN";
-    messages.classList.remove('game-message');
-    setTimeout(flashMessage, 1000)
-    function flashMessage() {
-        messages.classList.add('game-message');
-    }
-}
-
 //display Loser message
 function showLoserMessage() {
     // if(playSwitch.classList.contains('hidden') == false) return;
