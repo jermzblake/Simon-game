@@ -55,6 +55,7 @@ let gameBoard = {
 
 let compColorArray = [];
 let playerChoiceArray = [];
+let compChoices = [];
 let playerChoice;
 let correct;
 let playerTurn;
@@ -176,7 +177,13 @@ function showCompChoice() {
 
 //make computer sequence
 function compSequence(){
-    compColorArray.push(gameBoard.choices[(Math.floor(Math.random()*4))]);
+    compChoices.push([(Math.floor(Math.random()*4))])
+    compChoices.forEach(function (num){
+        compColorArray.push(gameBoard.choices[num]);
+    })
+
+    console.log(compChoices)
+    console.log(compColorArray)
     showCompChoice();
     //need a way to let user know it's their turn to try after the sequence is shown
 }
@@ -190,17 +197,17 @@ function playerSelect(evt) {
     // function hideTS(){
     //     evt.target.id.classList.add('hollow');
     // }
-    playerChoiceArray.push(evt.target);
+    playerChoiceArray.push(playerChoice);
     console.log(playerChoice);
     checkChoice()
 }
 
 //comparing player input to computer sequence
 function checkChoice() {
-    if(compColorArray.length > playerChoiceArray.length){
+    if(compChoices.length > playerChoiceArray.length){
         for(let i = 0; i < compColorArray.length; i++){
             for(let j = 0; j < playerChoiceArray.length; j++){
-                if(compColorArray[i] !== playerChoiceArray[j]){
+                if(compChoices[i] !== playerChoiceArray[j]){
                     console.log("wrong");
                     //need an init function here
                 }
@@ -209,7 +216,7 @@ function checkChoice() {
     }else {
         console.log("Yaya");
     }
-    if (compColorArray == playerChoiceArray){
+    if (compChoices == playerChoiceArray){
         console.log("on to the next one")
     }else{
         console.log("NOPE")
