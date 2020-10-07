@@ -47,7 +47,7 @@ let gameBoard = {
     right: 1,
     bottom: 2,
     left: 3,
-    choices: [topSwitch, rightSwitch, bottomSwitch, leftSwitch] 
+    choices: [topSwitch, rightSwitch, bottomSwitch, leftSwitch], 
 }
 
 
@@ -184,13 +184,13 @@ function compSequence(){
 //player event handler
 function playerSelect(evt) {
     if(evt.target.id === "main-container") return;
-    playerChoice = evt.target.id
+    playerChoice = evt.target
     // playerChoice.classList.remove('hollow');
     // setTimeout(hideTS, 500);
     // function hideTS(){
     //     evt.target.id.classList.add('hollow');
     // }
-    playerChoiceArray.push(evt.target.id);
+    playerChoiceArray.push(evt.target);
     console.log(playerChoice);
     checkChoice()
 }
@@ -200,15 +200,17 @@ function checkChoice() {
     if(compColorArray.length > playerChoiceArray.length){
         for(let i = 0; i < compColorArray.length; i++){
             for(let j = 0; j < playerChoiceArray.length; j++){
-                if(compColorArray[i] != playerChoiceArray[j]){
+                if(compColorArray[i] !== playerChoiceArray[j]){
                     console.log("wrong");
-                    gameStart()
+                    //need an init function here
                 }
             }
         }
-    }else return;
+    }else {
+        console.log("Yaya");
+    }
     if (compColorArray == playerChoiceArray){
-        console.log("move on")
+        console.log("on to the next one")
     }else{
         console.log("NOPE")
     }
