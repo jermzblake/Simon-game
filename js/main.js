@@ -207,9 +207,12 @@ function playerSelect(evt) {
     playerChoiceArray.push(playerChoice);
     console.log(playerChoiceArray);
     compareChoices();
-    if(areSame == true){
+    if(areSame == true && playerChoiceArray < compChoices){
+        return
+    }else if (areSame == true) {
         compSequence()
     }else{
+        
         console.log("na-uh")
     }
 }
