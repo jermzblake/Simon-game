@@ -88,7 +88,6 @@ p {
   position: absolute;
   height: 13px;
   width: 22px;
-  border: 1px solid silver;
   left: 0;
   bottom: 0;
 }
@@ -117,4 +116,10 @@ background-color: inherit;
   
 .game-message {
     display: none;
+  }
+
+  #count {
+    position: absolute;
+    left: 44px;
+    bottom: 0px;
   }

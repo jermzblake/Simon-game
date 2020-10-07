@@ -68,7 +68,7 @@ let score = 0
 
 /*----- cached element references -----*/
 //score
-let playerScore = document.getElementById("current-score-box")
+let playerScore = document.getElementById("count");
 // let highScore = ;
 
 //play swtiches
@@ -210,6 +210,8 @@ function playerSelect(evt) {
     if(areSame == true && playerChoiceArray < compChoices){
         return
     }else if (areSame == true) {
+        score++
+        playerScore.innerHTML = score;
         compSequence()
     }else{
         
