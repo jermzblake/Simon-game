@@ -122,40 +122,41 @@ function pressPlay(){
 
 //Show switches
 function flashTopSwitch(){
+    gameSounds.topSound.play();
     topSwitch.classList.remove('hollow');
     setTimeout(hideTS, 500);
     function hideTS(){
         topSwitch.classList.add('hollow');
     }
-    gameSounds.topSound.play();
 }
 
 function flashRightSwitch(){
+    gameSounds.rightSound.play();
     rightSwitch.classList.remove('hollow');
     setTimeout(hideRS, 500);
     function hideRS(){
         rightSwitch.classList.add('hollow');
     }
-    gameSounds.rightSound.play();
 }
 
 function flashBottomSwitch(){
+    gameSounds.bottomSound.play();
     bottomSwitch.classList.remove('hollow');
     setTimeout(hideBS, 500);
     function hideBS(){
         bottomSwitch.classList.add('hollow');
     }
-    gameSounds.bottomSound.play();
 }
 
 function flashLeftSwitch(){
+    gameSounds.leftSound.play();
     leftSwitch.classList.remove('hollow');
     setTimeout(hideLS, 500);
     function hideLS(){
         leftSwitch.classList.add('hollow');
     }
-    gameSounds.leftSound.play();
 }
+
 //display initial watch message
 function showWatchMessage() {
     if(playSwitch.classList.contains('hidden') == false) return;
