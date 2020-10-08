@@ -238,7 +238,7 @@ function showCompChoice() {
 }
 
 //make computer sequence
-function compSequence(){
+function generateCompSequence(){
     text.textContent = "WATCH"
     playerChoiceArray = [];
     compColorArray = [];
@@ -273,7 +273,7 @@ function playerSelect(evt) {
         playSuccessSound()
         playerScore.innerHTML = score;
         showSuccessMessage()
-        setTimeout(compSequence, 1100);
+        setTimeout(generateCompSequence, 1100);
     }else{
         showLoserMessage()
         setTimeout(reInit, 2000);
@@ -297,5 +297,5 @@ function gameStart() {
     compColorArray = [];
     playerChoiceArray = [];
     score = 0;
-    compSequence();
+    generateCompSequence();
 }
