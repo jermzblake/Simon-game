@@ -114,6 +114,7 @@ background-color: inherit;
     width:50px;
     top: -20px;
     right: 17px;
+    cursor: none;
   }
   
 .game-message {
