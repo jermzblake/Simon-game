@@ -37,10 +37,10 @@
 
 //Sounds
 let gameSounds = {
-    greenSound: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"),
-    yellowSound: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"),
-    blueSound: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"),
-    redSound: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"),
+    topSound: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"),
+    rightSound: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"),
+    bottomSound: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"),
+    leftSound: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"),
 }
 
 //cached game switches
