@@ -41,7 +41,8 @@ let gameSounds = {
     rightSound: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"),
     bottomSound: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"),
     leftSound: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"),
-    successSound: new Audio("https://freesound.org/people/grunz/sounds/109662/"),
+    successSound: new Audio("sounds/109662__grunz__success.wav"),
+    failureSound: new Audio("sounds/trumpet__fail.mp3")
 }
 
 //cached game switches
@@ -172,6 +173,7 @@ function showWatchMessage() {
 function showLoserMessage() {
     // if(playSwitch.classList.contains('hidden') == false) return;
     text.textContent = "NUH-UH!";
+    gameSounds.failureSound.play();
     messages.classList.remove('game-message');
     setTimeout(flashMessage, 2000)
     function flashMessage() {
