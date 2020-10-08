@@ -127,6 +127,7 @@ function flashTopSwitch(){
     function hideTS(){
         topSwitch.classList.add('hollow');
     }
+    gameSounds.topSound.play();
 }
 
 function flashRightSwitch(){
@@ -135,6 +136,7 @@ function flashRightSwitch(){
     function hideRS(){
         rightSwitch.classList.add('hollow');
     }
+    gameSounds.rightSound.play();
 }
 
 function flashBottomSwitch(){
@@ -143,6 +145,7 @@ function flashBottomSwitch(){
     function hideBS(){
         bottomSwitch.classList.add('hollow');
     }
+    gameSounds.bottomSound.play();
 }
 
 function flashLeftSwitch(){
@@ -151,6 +154,7 @@ function flashLeftSwitch(){
     function hideLS(){
         leftSwitch.classList.add('hollow');
     }
+    gameSounds.leftSound.play();
 }
 //display initial watch message
 function showWatchMessage() {
@@ -190,11 +194,23 @@ function showCompChoice() {
     compColorArray.forEach(function (el){
         currentTimer += 1000;
         setTimeout(flashSwitch, currentTimer);
+
         function flashSwitch() {
+            if(el.classList.contains('top-switch')){
+                gameSounds.topSound.play();
+            }if(el.classList.contains('right-switch')){
+                gameSounds.rightSound.play();
+            }if(el.classList.contains('bottom-switch')){
+                gameSounds.bottomSound.play();
+            }if(el.classList.contains('left-switch')){
+                gameSounds.leftSound.play();
+            }
             el.classList.remove('hollow');
             setTimeout(hideSwitch, 500);
             function hideSwitch(){
+
                 el.classList.add('hollow');
+                
             }
         }
     })
