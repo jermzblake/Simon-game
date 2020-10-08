@@ -80,6 +80,7 @@ body {
   border: 5px solid #BEB7DF;
   position: relative;
   cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
 }
 
 p {
@@ -95,7 +96,8 @@ p {
 }
 
 #current-score-box {
-  font-size: 14px;
+  font-size: 11px;
+  font-family: 'Press Start 2P', cursive;
 }
 
 
@@ -112,9 +114,10 @@ background-color: inherit;
     position: relative;
     height: 50px;
     width:50px;
-    top: -20px;
-    right: 17px;
+    top: -50px;
+    right: 28px;
     cursor: none;
+    font-family: 'Monoton', cursive;
   }
   
 .game-message {
@@ -123,6 +126,7 @@ background-color: inherit;
 
   #count {
     position: absolute;
-    left: 50px;
-    bottom: -3px;
+    left: 65px;
+    bottom: 2px;
+    font-family: 'Press Start 2P', cursive;
   }
