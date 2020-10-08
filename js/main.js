@@ -42,7 +42,11 @@ let gameSounds = {
     bottomSound: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"),
     leftSound: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"),
     successSound: new Audio("sounds/109662__grunz__success.wav"),
-    failureSound: new Audio("sounds/trumpet__fail.mp3")
+    failureSound: new Audio("sounds/trumpet__fail.mp3"),
+    heatingUp: new Audio("sounds/heating-3.mp3"),
+    onFire: new Audio("sounds/on-fire.mp3"),
+    boomShakalaka: new Audio("sounds/boomshakalaka.mp3"),
+    wooo: new Audio("sounds/woooooo.mp3")
 }
 
 //cached game switches
@@ -193,6 +197,21 @@ function showSuccessMessage(){
     }
 }
 
+//successful attempt sounds
+function playSuccessSound(){
+    if(score == 3){
+        gameSounds.heatingUp.play(); return
+    }if(score == 5){
+        gameSounds.onFire.play(); return
+    }if(score == 10){
+        gameSounds.boomShakalaka.play(); return
+    }if(score == 15){
+        gameSounds.wooo.play(); return
+    }else{
+        gameSounds.successSound.play()
+    }
+}
+
 
 //display computer's choice(s)
 function showCompChoice() {
@@ -255,8 +274,8 @@ function playerSelect(evt) {
     if(areSame == true && playerChoiceArray < compChoices){
         return
     }else if (areSame == true) {
-        gameSounds.successSound.play()
         score++
+        playSuccessSound()
         playerScore.innerHTML = score;
         showSuccessMessage()
         setTimeout(compSequence, 1100);
