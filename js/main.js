@@ -124,6 +124,7 @@ function pressPlay(){
 
 //Show switches
 function flashTopSwitch(){
+    // if(playSwitch.classList.contains('hidden') == false) return;
     gameSounds.topSound.play();
     topSwitch.classList.remove('hollow');
     setTimeout(hideTS, 400);
@@ -133,6 +134,7 @@ function flashTopSwitch(){
 }
 
 function flashRightSwitch(){
+    // if(playSwitch.classList.contains('hidden') == false) return;
     gameSounds.rightSound.play();
     rightSwitch.classList.remove('hollow');
     setTimeout(hideRS, 400);
@@ -142,6 +144,7 @@ function flashRightSwitch(){
 }
 
 function flashBottomSwitch(){
+    // if(playSwitch.classList.contains('hidden') == false) return;
     gameSounds.bottomSound.play();
     bottomSwitch.classList.remove('hollow');
     setTimeout(hideBS, 400);
@@ -151,6 +154,7 @@ function flashBottomSwitch(){
 }
 
 function flashLeftSwitch(){
+    // if(playSwitch.classList.contains('hidden') == false) return;
     gameSounds.leftSound.play();
     leftSwitch.classList.remove('hollow');
     setTimeout(hideLS, 400);
@@ -161,7 +165,6 @@ function flashLeftSwitch(){
 
 //display initial watch message
 function showWatchMessage() {
-    if(playSwitch.classList.contains('hidden') == false) return;
     messages.classList.remove('game-message');
     setTimeout(flashMessage, 1000)
     function flashMessage() {
@@ -171,7 +174,6 @@ function showWatchMessage() {
 
 //display Loser message
 function showLoserMessage() {
-    // if(playSwitch.classList.contains('hidden') == false) return;
     text.textContent = "NUH-UH!";
     gameSounds.failureSound.play();
     messages.classList.remove('game-message');
