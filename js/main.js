@@ -35,6 +35,14 @@
     -this would require a setting toggle between the two game modes
 */
 
+//Sounds
+let gameSounds = {
+    greenSound: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"),
+    yellowSound: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"),
+    blueSound: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"),
+    redSound: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"),
+}
+
 //cached game switches
 let topSwitch = document.getElementById("top-switch");
 let rightSwitch = document.getElementById("right-switch");
