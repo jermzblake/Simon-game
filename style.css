@@ -46,6 +46,7 @@ body {
   height: 100px;
   width: 100px;
   border-radius: 50%;
+  cursor: grab;
 }
 
 .left-switch {
@@ -78,6 +79,7 @@ body {
   align-items: center;
   border: 5px solid #BEB7DF;
   position: relative;
+  cursor: pointer;
 }
 
 p {
