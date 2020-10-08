@@ -9,10 +9,10 @@ body {
 }
 
 #main-container {
-  margin: 20px auto;
+  margin: 200px auto;
   display: flex;
-  height: 300px;
-  width: 300px;
+  height: 390px;
+  width: 390px;
   background-color: #1A1423;
 }
 
@@ -43,8 +43,8 @@ body {
 } 
 
 .switch {
-  height: 100px;
-  width: 100px;
+  height: 130px;
+  width: 130px;
   border-radius: 50%;
   cursor: grab;
 }
@@ -72,8 +72,8 @@ body {
 #middle-switch {
   background-color: inherit;
   border-radius: 0;
-  height: 50px;
-  width:50px;
+  height: 80px;
+  width:80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,7 +95,7 @@ p {
 }
 
 #current-score-box {
-  font-size: 11px;
+  font-size: 14px;
 }
 
 
@@ -123,6 +123,6 @@ background-color: inherit;
 
   #count {
     position: absolute;
-    left: 44px;
-    bottom: 0px;
+    left: 50px;
+    bottom: -3px;
   }
