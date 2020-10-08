@@ -72,12 +72,10 @@ let playerChoiceArray = [];
 let compChoices = [];
 let areSame = false;
 let playerChoice;
-let correct;
-let playerTurn;
-let compTurn;
 let win;
 let timer = 0
 let score = 0
+let compTurn; //if not using get rid of this
 
 
 /*----- cached element references -----*/
@@ -232,9 +230,7 @@ function showCompChoice() {
             el.classList.remove('hollow');
             setTimeout(hideSwitch, 500);
             function hideSwitch(){
-
                 el.classList.add('hollow');
-                
             }
         }
     })
@@ -252,7 +248,6 @@ function compSequence(){
     })
     showWatchMessage();
     setTimeout(showCompChoice, 500);
-    //need a way to let user know it's their turn to try after the sequence is shown
 }
 
 //player event handler
