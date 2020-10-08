@@ -195,7 +195,6 @@ function showCompChoice() {
     compColorArray.forEach(function (el){
         currentTimer += 800;
         setTimeout(flashSwitch, currentTimer);
-
         function flashSwitch() {
             if(el.classList.contains('top-switch')){
                 gameSounds.topSound.play();
@@ -217,7 +216,6 @@ function showCompChoice() {
     })
 
 }
-
 
 //make computer sequence
 function compSequence(){
