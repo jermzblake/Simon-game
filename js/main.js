@@ -41,6 +41,8 @@ let gameSounds = {
     rightSound: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"),
     bottomSound: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"),
     leftSound: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"),
+    successSound: new Audio("sounds/109662__grunz__success.wav"),
+    failureSound: new Audio("sounds/trumpet__fail.mp3")
 }
 
 //cached game switches
@@ -171,6 +173,7 @@ function showWatchMessage() {
 function showLoserMessage() {
     // if(playSwitch.classList.contains('hidden') == false) return;
     text.textContent = "NUH-UH!";
+    gameSounds.failureSound.play();
     messages.classList.remove('game-message');
     setTimeout(flashMessage, 2000)
     function flashMessage() {
@@ -217,7 +220,6 @@ function showCompChoice() {
 
 }
 
-
 //make computer sequence
 function compSequence(){
     text.textContent = "WATCH"
@@ -245,13 +247,13 @@ function playerSelect(evt) {
     }if(evt.target.id === "left-switch"){
         playerChoice = 3;
     }
-    // playerChoice = evt.target
     playerChoiceArray.push(playerChoice);
     console.log(playerChoiceArray);
     compareChoices();
     if(areSame == true && playerChoiceArray < compChoices){
         return
     }else if (areSame == true) {
+        gameSounds.successSound.play()
         score++
         playerScore.innerHTML = score;
         showSuccessMessage()
@@ -259,7 +261,6 @@ function playerSelect(evt) {
     }else{
         showLoserMessage()
         setTimeout(reInit, 2000);
-        // console.log("na-uh")
     }
 }
 
