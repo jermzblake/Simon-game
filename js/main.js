@@ -124,7 +124,7 @@ function pressPlay(){
 function flashTopSwitch(){
     gameSounds.topSound.play();
     topSwitch.classList.remove('hollow');
-    setTimeout(hideTS, 500);
+    setTimeout(hideTS, 400);
     function hideTS(){
         topSwitch.classList.add('hollow');
     }
@@ -133,7 +133,7 @@ function flashTopSwitch(){
 function flashRightSwitch(){
     gameSounds.rightSound.play();
     rightSwitch.classList.remove('hollow');
-    setTimeout(hideRS, 500);
+    setTimeout(hideRS, 400);
     function hideRS(){
         rightSwitch.classList.add('hollow');
     }
@@ -142,7 +142,7 @@ function flashRightSwitch(){
 function flashBottomSwitch(){
     gameSounds.bottomSound.play();
     bottomSwitch.classList.remove('hollow');
-    setTimeout(hideBS, 500);
+    setTimeout(hideBS, 400);
     function hideBS(){
         bottomSwitch.classList.add('hollow');
     }
@@ -151,7 +151,7 @@ function flashBottomSwitch(){
 function flashLeftSwitch(){
     gameSounds.leftSound.play();
     leftSwitch.classList.remove('hollow');
-    setTimeout(hideLS, 500);
+    setTimeout(hideLS, 400);
     function hideLS(){
         leftSwitch.classList.add('hollow');
     }
@@ -193,7 +193,7 @@ function showSuccessMessage(){
 function showCompChoice() {
     currentTimer = timer
     compColorArray.forEach(function (el){
-        currentTimer += 1000;
+        currentTimer += 800;
         setTimeout(flashSwitch, currentTimer);
 
         function flashSwitch() {
