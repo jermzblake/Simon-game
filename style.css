@@ -128,7 +128,7 @@ p {
 #count {
   position: absolute;
   left: 70px;
-  bottom: 0px;
+  bottom: 2px;
   font-family: 'Press Start 2P', cursive;
 }
 
@@ -145,7 +145,7 @@ p {
 #high-score {
   position: absolute;
   left: 70px;
-  bottom: -13px;
+  bottom: -10px;
   font-family: 'Press Start 2P', cursive;
 }
 
