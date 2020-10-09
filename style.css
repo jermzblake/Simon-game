@@ -138,40 +138,13 @@ p {
   font-family: 'Press Start 2P', cursive;
 }
 
-#top-score {
+#high-score {
   position: absolute;
   left: 70px;
   bottom: -10px;
   font-family: 'Press Start 2P', cursive;
 }
 
-  /* @media only screen and (min-width: 768px) {
-    #main-container {
-      margin: 200px auto;
-      display: flex;
-      height: 390px;
-      width: 390px;
-      background-color: #1A1423;
-    }
+/* @media only screen and (min-width: 768px) {
 
-    .switch {
-      height: 130px;
-      width: 130px;
-      border-radius: 50%;
-      cursor: grab;
-    }
-
-    #middle-switch {
-      background-color: inherit;
-      border-radius: 0;
-      height: 80px;
-      width:80px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 5px solid #BEB7DF;
-      position: relative;
-      cursor: pointer;
-      font-family: 'Press Start 2P', cursive;
-    }
-  } */
+} */

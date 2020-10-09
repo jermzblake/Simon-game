@@ -81,7 +81,7 @@ let compTurn; //if not using get rid of this
 /*----- cached element references -----*/
 //score
 let playerScore = document.getElementById("count");
-// let highScore = ;
+let highScore = document.getElementById("high-score");
 
 //play swtiches
 let playSwitch = document.getElementById("middle-switch");
@@ -264,18 +264,21 @@ function playerSelect(evt) {
         playerChoice = 3;
     }
     playerChoiceArray.push(playerChoice);
-    console.log(playerChoiceArray);
+    // console.log(playerChoiceArray);
     compareChoices();
     if(areSame == true && playerChoiceArray < compChoices){
         return
     }else if (areSame == true) {
         score++
+        localStorage.setItem('high-score', score);
         playSuccessSound()
         playerScore.innerHTML = score;
+        highScoreCounter = Number(localStorage.getItem('high-score'));
         showSuccessMessage()
         setTimeout(generateCompSequence, 1100);
     }else{
         showLoserMessage()
+        highScore.textContent = highScoreCounter
         setTimeout(reInit, 2000);
     }
 }
