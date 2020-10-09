@@ -23,7 +23,6 @@ body {
   flex-direction: column;
   height: 100%;
   width: 33.33%;
-  /* flex: 1; */
 }
 
 #left-column {
@@ -150,6 +149,48 @@ p {
   font-family: 'Press Start 2P', cursive;
 }
 
-/* @media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
+  #main-container {
+    margin: 200px auto;
+    display: flex;
+    height: 600px;
+    width: 600px;
+    background-color: #1A1423;
+  }
 
-} */
+  .switch {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    cursor: grab;
+  }
+
+  #middle-switch {
+    background-color: #BEB7DF;
+    border-radius: 0;
+    height: 128px;
+    width:128px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #7D83FF;
+    border-radius: 15px 30px;
+    position: relative;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5em;
+  }
+
+  #message {
+    color: #CEBEBE;
+    position: relative;
+    height: 40px;
+    width: 65px;
+    top: -100px;
+    right: 70px;
+    cursor: none;
+    font-family: 'Monoton', cursive;
+    font-size: 1.8em;
+  }
+
+}
