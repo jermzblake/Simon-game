@@ -11,8 +11,8 @@ body {
 #main-container {
   margin: 200px auto;
   display: flex;
-  height: 390px;
-  width: 390px;
+  height: 360px;
+  width: 360px;
   background-color: #1A1423;
 }
 
@@ -23,7 +23,7 @@ body {
   flex-direction: column;
   height: 100%;
   width: 33.33%;
-  flex: 1;
+  /* flex: 1; */
 }
 
 #left-column {
@@ -44,8 +44,8 @@ body {
 } 
 
 .switch {
-  height: 130px;
-  width: 130px;
+  height: 120px;
+  width: 120px;
   border-radius: 50%;
   cursor: grab;
 }
@@ -114,9 +114,9 @@ p {
 #message {
   color: #CEBEBE;
   position: relative;
-  height: 50px;
+  height: 40px;
   width:50px;
-  top: -50px;
+  top: -40px;
   right: 28px;
   cursor: none;
   font-family: 'Monoton', cursive;
@@ -129,7 +129,7 @@ p {
 #count {
   position: absolute;
   left: 70px;
-  bottom: 2px;
+  bottom: 0px;
   font-family: 'Press Start 2P', cursive;
 }
 
@@ -138,7 +138,7 @@ p {
   height: 13px;
   width: 22px;
   right: 61px;
-  bottom: 10px;
+  bottom: 12px;
   font-size: 11px;
   font-family: 'Press Start 2P', cursive;
 }
@@ -146,7 +146,7 @@ p {
 #high-score {
   position: absolute;
   left: 70px;
-  bottom: -10px;
+  bottom: -13px;
   font-family: 'Press Start 2P', cursive;
 }
 
