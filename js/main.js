@@ -213,6 +213,7 @@ function generateCompSequence(){
 function playerSelect(evt) {
     if(evt.target.id === "main-container") return;
     if(!playSwitch.classList.contains("hidden")) return;
+    if(messages.classList.contains('hidden')) return;
     if(evt.target.id === "top-switch"){
         playerChoice = 0;
     }if(evt.target.id === "right-switch"){
