@@ -40,6 +40,7 @@ body {
 #right-column {
   align-items: center;
   justify-content: center;
+  position: relative;
 } 
 
 .switch {
@@ -93,40 +94,84 @@ p {
   width: 22px;
   left: 0;
   bottom: 0;
-}
-
-#current-score-box {
   font-size: 11px;
   font-family: 'Press Start 2P', cursive;
 }
-
 
 .hidden {
   z-index: -1;
 }
 
 .hollow {
-background-color: inherit;
+  background-color: inherit;
 }
 
-  #message {
-    color: #CEBEBE;
-    position: relative;
-    height: 50px;
-    width:50px;
-    top: -50px;
-    right: 28px;
-    cursor: none;
-    font-family: 'Monoton', cursive;
-  }
+#message {
+  color: #CEBEBE;
+  position: relative;
+  height: 50px;
+  width:50px;
+  top: -50px;
+  right: 28px;
+  cursor: none;
+  font-family: 'Monoton', cursive;
+}
   
 .game-message {
     display: none;
-  }
+}
 
-  #count {
-    position: absolute;
-    left: 65px;
-    bottom: 2px;
-    font-family: 'Press Start 2P', cursive;
-  }
+#count {
+  position: absolute;
+  left: 70px;
+  bottom: 2px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+#high-score-box {
+  position: absolute;
+  height: 13px;
+  width: 22px;
+  right: 61px;
+  bottom: 10px;
+  font-size: 11px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+#top-score {
+  position: absolute;
+  left: 70px;
+  bottom: -10px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+  /* @media only screen and (min-width: 768px) {
+    #main-container {
+      margin: 200px auto;
+      display: flex;
+      height: 390px;
+      width: 390px;
+      background-color: #1A1423;
+    }
+
+    .switch {
+      height: 130px;
+      width: 130px;
+      border-radius: 50%;
+      cursor: grab;
+    }
+
+    #middle-switch {
+      background-color: inherit;
+      border-radius: 0;
+      height: 80px;
+      width:80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 5px solid #BEB7DF;
+      position: relative;
+      cursor: pointer;
+      font-family: 'Press Start 2P', cursive;
+    }
+  } */
