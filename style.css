@@ -71,17 +71,22 @@ body {
 }
 
 #middle-switch {
-  background-color: inherit;
+  background-color: #BEB7DF;
   border-radius: 0;
   height: 80px;
   width:80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 5px solid #BEB7DF;
+  border: 5px solid #7D83FF;
+  border-radius: 15px 30px;
   position: relative;
   cursor: pointer;
   font-family: 'Press Start 2P', cursive;
+}
+
+.press-play > p {
+  color: inherit;
 }
 
 p {
