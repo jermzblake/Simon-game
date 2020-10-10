@@ -237,8 +237,8 @@ function playerSelect(evt) {
         setTimeout(generateCompSequence, 1100);
     }else{
         showLoserMessage()
-        highScore.textContent = highScoreCounter
         setTimeout(reInit, 2000);
+        highScore.textContent = highScoreCounter
     }
 }
 
