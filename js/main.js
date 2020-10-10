@@ -136,7 +136,7 @@ function showWatchMessage() {
 
 //display Loser message
 function showLoserMessage() {
-    text.textContent = "NUH-UH!";
+    text.textContent = `NUH- UH!`;
     gameSounds.failureSound.play();
     messages.classList.remove('game-message');
     setTimeout(flashMessage, 2000)
@@ -147,7 +147,7 @@ function showLoserMessage() {
 
 //display Successful attempt message
 function showSuccessMessage(){
-    text.textContent = "NICE!";
+    text.textContent = "GOOD JOB!";
     messages.classList.remove('game-message');
     setTimeout(flashMessage, 1000)
     function flashMessage() {
@@ -187,7 +187,7 @@ function showCompChoice() {
                 gameSounds.leftSound.play();
             }
             el.classList.remove('hollow');
-            setTimeout(hideSwitch, 500);
+            setTimeout(hideSwitch, 400);
             function hideSwitch(){
                 el.classList.add('hollow');
             }

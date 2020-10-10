@@ -149,6 +149,10 @@ p {
   font-family: 'Press Start 2P', cursive;
 }
 
+#message > h2 {
+  margin-left: 6px;
+}
+
 @media only screen and (min-width: 768px) {
   #main-container {
     margin: 200px auto;
@@ -191,6 +195,10 @@ p {
     cursor: none;
     font-family: 'Monoton', cursive;
     font-size: 1.8em;
+  }
+
+  #message > h2 {
+    margin-left: 10px;
   }
 
 }
