@@ -35,11 +35,8 @@ let compColorArray = [];
 let playerChoiceArray = [];
 let compChoices = [];
 let areSame = false;
-let playerChoice;
-let win;
 let timer = 0
 let score = 0
-let compTurn; //if not using get rid of this
 
 
 /*----- cached element references -----*/
@@ -193,7 +190,6 @@ function showCompChoice() {
             }
         }
     })
-
 }
 
 //make computer sequence
